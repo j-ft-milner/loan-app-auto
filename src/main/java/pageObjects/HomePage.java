@@ -13,6 +13,11 @@ public class HomePage extends BasePage {
         driver.get(URL);
     }
 
+    public void clickAdminButton(){
+        WebElement admin = driver.findElement(By.linkText("Admin"));
+        admin.click();
+    }
+
     public void clickLoginButton(){
         WebElement login = driver.findElement(By.linkText("Login"));
         login.click();

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +14,11 @@ public class ApplicationPage extends BasePage {
     public String getErrorMessage(){
         WebElement errorMessage = driver.findElement(By.cssSelector("div.mt-4.alert.alert-danger"));
         return errorMessage.getText();
+    }
+
+    public String getAlertText(){
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        return alert.getText();
     }
 
     public String getResultText(){
