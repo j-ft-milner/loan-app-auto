@@ -1,18 +1,27 @@
 package Tests;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pageObjects.HomePage;
+import pageObjects.LogInPage;
 
 public class TestNewLoanApplication {
 
-    private final HomePage homepage = new HomePage();
+    private static final HomePage homePage = new HomePage();
+    private static final LogInPage login = new LogInPage("user", "user");
 
-    //TODO Test to add valid loan applications
-    @Test
-    public void test(){
-        homepage.goTo();
+    @BeforeAll
+    public static void setUp(){
+        homePage.goTo();
     }
 
-    //TODO Various tests adding loan applications
+    @Test
+    public void test(){
+        homePage.clickLoginButton();
+        login.login();
+        homePage.clickApply();
+    }
+
+
 
 }
