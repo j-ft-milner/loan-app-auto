@@ -52,4 +52,27 @@ public class UserManagementPage extends AdminPage{
         }
         return false;
     }
+
+    public boolean deleteUserFromTable(String username) {
+        WebElement table = driver.findElement(By.cssSelector("table.UserManagement_table__fAz7r"));
+        List<WebElement> rows = table.findElements(By.cssSelector("tbody tr"));
+
+        for (WebElement row : rows) {
+            WebElement usernameCell = row.findElements(By.tagName("td")).get(1);
+            String rowUsername = usernameCell.getText().trim();
+
+            if (rowUsername.equals(username)) {
+                WebElement deleteButton = row.findElements(By.tagName("td")).get(6).findElement(By.cssSelector("button.btn-danger"));
+                deleteButton.click();
+                try {
+                    wait.until(ExpectedConditions.stalenessOf(row));
+                } catch (Exception e) {
+                    System.out.println("Error waiting for row removal.");
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
