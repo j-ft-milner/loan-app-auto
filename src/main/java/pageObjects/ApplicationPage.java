@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -16,9 +17,11 @@ public class ApplicationPage extends BasePage {
         return errorMessage.getText();
     }
 
-    public String getAlertText(){
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        return alert.getText();
+    public String getAlertText(String field){
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        String script = "return document.querySelector('#" + "form" + field + "').validationMessage";
+
+        return (String) jsExecutor.executeScript(script);
     }
 
     public String getResultText(){
