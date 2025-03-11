@@ -13,8 +13,14 @@ public class HomePage extends BasePage {
         driver.get(URL);
     }
 
+    public void logOut(){
+        WebElement link = driver.findElement(By.xpath("//a[text()=' Logout']"));
+        link.click();
+
+    }
+
     public void clickAdminButton(){
-        WebElement admin = driver.findElement(By.linkText("Admin"));
+        WebElement admin = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Admin")));
         admin.click();
     }
 

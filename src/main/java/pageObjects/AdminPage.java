@@ -10,7 +10,7 @@ public class AdminPage extends BasePage{
         button.click();
     }
 
-    protected void clickUserManageButton(){
+    public void clickUserManageButton(){
         WebElement button = driver.findElement(By.linkText("User Management"));
         button.click();
     }
