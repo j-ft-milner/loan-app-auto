@@ -38,9 +38,9 @@ public class User {
             String responseBody = EntityUtils.toString(response.getEntity());
 
             JSONObject jsonResponse = new JSONObject(responseBody);
-            this.username = jsonResponse.getString("first_name");  // Extract first name
-            this.email = jsonResponse.getString("email");          // Extract email
-            this.password = jsonResponse.getString("password");    // Extract password
+            this.username = jsonResponse.getString("first_name");
+            this.email = jsonResponse.getString("email");
+            this.password = jsonResponse.getString("password");
 
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());

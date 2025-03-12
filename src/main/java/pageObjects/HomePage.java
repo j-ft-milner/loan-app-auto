@@ -14,7 +14,8 @@ public class HomePage extends BasePage {
     }
 
     public void logOut(){
-        WebElement link = driver.findElement(By.xpath("//a[text()=' Logout']"));
+
+        WebElement link = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()=' Logout']")));
         link.click();
 
     }
@@ -25,7 +26,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickLoginButton(){
-        WebElement login = driver.findElement(By.linkText("Login"));
+        WebElement login = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Login")));
         login.click();
     }
 

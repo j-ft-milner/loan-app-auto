@@ -45,8 +45,6 @@ public class TestAdminAddNewUsers {
         homePage.clickAdminButton();
         userManagementPage.clickUserManageButton();
         userManagementPage.deleteUserFromTable(username);
-        homePage.goTo();
-        homePage.logOut();
     }
 
     @Test
@@ -62,7 +60,12 @@ public class TestAdminAddNewUsers {
         userManagementPage.clickUserManageButton();
         Assertions.assertTrue(userManagementPage.checkUserInTable(username));
         userManagementPage.deleteUserFromTable(username);
+    }
+
+    @AfterEach
+    public void cleanUp(){
         homePage.goTo();
         homePage.logOut();
     }
 }
+

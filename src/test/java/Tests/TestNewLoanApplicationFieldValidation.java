@@ -1,9 +1,6 @@
 package Tests;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import pageObjects.ApplicationPage;
 import pageObjects.HomePage;
 import pageObjects.LogInPage;
@@ -13,17 +10,11 @@ public class TestNewLoanApplicationFieldValidation {
     private static final HomePage homePage = new HomePage();
     private static final LogInPage login = new LogInPage("user", "user");
 
-    @BeforeAll
-    public static void setUp(){
-        homePage.goTo();
-        homePage.clickLoginButton();
-        login.login();
-        homePage.clickApply();
-    }
-
     @BeforeEach
     public void refreshForm(){
         homePage.goTo();
+        homePage.clickLoginButton();
+        login.login();
         homePage.clickApply();
     }
 
@@ -115,5 +106,11 @@ public class TestNewLoanApplicationFieldValidation {
                 "10000");
 
         Assertions.assertEquals("Please fill in this field.", applicationPage.getAlertText("Postcode"));
+    }
+
+    @AfterEach
+    public void cleanUp(){
+        homePage.goTo();
+        homePage.logOut();
     }
 }

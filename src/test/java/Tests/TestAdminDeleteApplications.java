@@ -1,5 +1,6 @@
 package Tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import pageObjects.HomePage;
 import pageObjects.LogInPage;
@@ -15,5 +16,11 @@ public class TestAdminDeleteApplications {
         homePage.clickLoginButton();
         login.login();
         homePage.clickAdminButton();
+    }
+
+    @AfterEach
+    public void cleanUp(){
+        homePage.goTo();
+        homePage.logOut();
     }
 }
