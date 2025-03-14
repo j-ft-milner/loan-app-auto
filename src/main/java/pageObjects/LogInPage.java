@@ -36,4 +36,9 @@ public class LogInPage extends BasePage {
         submit.click();
     }
 
+    public String getErrorMessage(){
+        WebElement errorMessage = driver.findElement(By.className("alert"));
+        return errorMessage.getText();
+    }
+
 }

@@ -50,6 +50,17 @@
             <artifactId>httpclient5</artifactId>
             <version>5.4.2</version>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.21.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.21.0</version>
+            <scope>test</scope>
+        </dependency>
 
 
 
