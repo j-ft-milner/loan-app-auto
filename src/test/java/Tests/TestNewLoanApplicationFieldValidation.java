@@ -51,7 +51,7 @@ public class TestNewLoanApplicationFieldValidation {
                 "",
                 "10000");
 
-        Assertions.assertEquals("Please fill in this field.", applicationPage.getAlertText("Email"));
+        Assertions.assertEquals("Please fill out this field.", applicationPage.getAlertText("Email"));
     }
 
     @Test
@@ -105,7 +105,7 @@ public class TestNewLoanApplicationFieldValidation {
                 "email@email",
                 "10000");
 
-        Assertions.assertEquals("Please fill in this field.", applicationPage.getAlertText("Postcode"));
+        Assertions.assertEquals("Please fill out this field.", applicationPage.getAlertText("Postcode"));
     }
 
     @AfterEach
