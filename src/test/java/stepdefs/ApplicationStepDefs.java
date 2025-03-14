@@ -75,7 +75,7 @@ public class ApplicationStepDefs {
     public void anErrorMessageIsDisplayed(String expectedMessage) {
         String actualMessage;
 
-        if (expectedMessage.contains("@") || expectedMessage.equals("Please fill in this field.")) {
+        if (expectedMessage.contains("@") || expectedMessage.equals("Please fill out this field.")) {
             actualMessage = applicationPage.getAlertText("Email");
 
             if (actualMessage == null || actualMessage.isEmpty()) {

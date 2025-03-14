@@ -13,9 +13,9 @@ Feature: LoanApplication
     Examples:
       | FirstName | LastName | Age | Phone | HouseNumber | City  | Address | Postcode | Email       | LoanAmount | ExpectedMessage                                    |
       | bob       | bill     | 12  | 123   | 4           | City  |         | 12345    | test@test   | 10000      | Error: Age must be 18 or over.                     |
-      | bob       | bill     | 30  | 123   | 4           | City  |         | 12345    |             | 10000      | Please fill in this field.                         |
+      | bob       | bill     | 30  | 123   | 4           | City  |         | 12345    |             | 10000      | Please fill out this field.                         |
       | bob       | bill     | 30  | 123   | 4           | City  |         | 12345    | email       | 10000      | Please include an '@' in the email address. 'email' is missing an '@'.        |
       | bob       | bill     | 20  | 123   | 4           | City  |         | 12345    | test@test   | 10         | Error: Loan amount must be at least 1000.         |
-      | bob       | bill     | 30  | 123   | 4           | City  |         |          | email@email | 10000      | Please fill in this field.                         |
+      | bob       | bill     | 30  | 123   | 4           | City  |         |          | email@email | 10000      | Please fill out this field.                         |
 
 
