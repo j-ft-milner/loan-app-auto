@@ -1,13 +1,8 @@
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.*;
 
-    @RunWith(Cucumber.class)
-    @CucumberOptions(
-            plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},
-            features = "src/test/resources/features/",
-            glue = {"stepdefs"})
-
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("features")
 public class CucumberConfig {
 
 }
