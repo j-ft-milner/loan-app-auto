@@ -12,6 +12,7 @@ import pageObjects.LogInPage;
 
 import java.util.NoSuchElementException;
 
+
 public class ApplicationStepDefs {
 
     private static final HomePage homePage = new HomePage();
