@@ -25,7 +25,7 @@ public class ApplicationPage extends BasePage {
     }
 
     public String getResultText(){
-        WebElement successMessage = driver.findElement(By.cssSelector("p.lead"));
+        WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("p.lead")));
 
         return successMessage.getText();
     }
