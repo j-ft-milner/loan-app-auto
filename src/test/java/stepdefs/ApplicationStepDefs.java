@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.messages.types.Exception;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import pageObjects.ApplicationPage;
 import pageObjects.HomePage;
@@ -18,6 +19,7 @@ public class ApplicationStepDefs {
     private static ApplicationPage applicationPage;
 
 
+    @Step("Logged in user on the application page")
     @Given("a logged in user on the application page")
     public void aLoggedInUserOnTheApplicationPage(){
         if (!homePage.getUserLoggedIn().equals("NULL")){
@@ -29,6 +31,7 @@ public class ApplicationStepDefs {
         homePage.clickApply();
     }
 
+    @Step("User submits a valid application")
     @When("the user submits a valid application")
     public void theUserSubmitsAValidApplication(){
         applicationPage = new ApplicationPage();
@@ -45,6 +48,7 @@ public class ApplicationStepDefs {
                 "10000");
     }
 
+    @Step("Application is submitted")
     @Then("the application is submitted")
     public void theApplicationIsSubmitted(){
         Assertions.assertEquals("The initial application has been successful.", applicationPage.getResultText());
