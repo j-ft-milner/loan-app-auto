@@ -5,6 +5,7 @@ Feature: LoanApplication
     When the user submits a valid application
     Then the application is submitted
 
+  @firefox @edge
   Scenario Outline: Validate incorrect loan application inputs
     Given a user is on the loan application form
     When the user submits the form with "<FirstName>", "<LastName>", "<Age>", "<Phone>", "<HouseNumber>", "<City>", "<Address>", "<Postcode>", "<Email>", "<LoanAmount>"
